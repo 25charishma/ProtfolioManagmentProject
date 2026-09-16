@@ -13,11 +13,11 @@
      }
  }
 
- public class MethodDemo
- {
+ public class MethodDemo{
+ 
      public static void main(String[] args)
      {
-         Student1 s= new Student1();
+         Student1 s = new Student1();
          Student1 s1 = new Student1(10);
      }
  }

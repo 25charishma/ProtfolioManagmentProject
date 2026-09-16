@@ -1,34 +1,35 @@
 package com.portfolio.app.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
-	private String userid;
-	private String name;
-	private String email;
+    private String userId;
+    private String name;
+    private String email;
 
-	public User(String userid, String name, String email)
-	{
-		this.userid=userid;
-		this.name=name;
-		this.email=email;
-	}
-	public String getUserid() {
-		return userid;
-	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-	public String getName() {
-		return name;
-	}
+    private List<Holding> holdings;
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public User(String userId, String name, String email) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.holdings = new ArrayList<>();
+    }
+
+    public void addHolding(Holding holding) {
+        holdings.add(holding);
+    }
+
+    public List<Holding> getHoldings() {
+        return holdings;
+    }
+
+    public void display() {
+        System.out.println("User ID  : " + userId);
+        System.out.println("Name     : " + name);
+        System.out.println("Email    : " + email);
+        System.out.println("Holdings : " + holdings.size());
+    }
 }
