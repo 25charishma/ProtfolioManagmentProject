@@ -6,12 +6,14 @@ public class Holding {
     private Asset asset;
     private int quantity;
 
+    // Constructor
     public Holding(String holdingId, Asset asset, int quantity) {
         this.holdingId = holdingId;
         this.asset = asset;
         this.quantity = quantity;
     }
 
+    // Getters
     public String getHoldingId() {
         return holdingId;
     }
@@ -24,15 +26,19 @@ public class Holding {
         return quantity;
     }
 
-    public double getTotalValue() {
-        return asset.getCurrentValue() * quantity;
+    // Calculate total current value
+    public double getCurrentValue() {
+        return asset.calculateCurrentValue() * quantity;
     }
 
+    // toString method
     @Override
     public String toString() {
-        return "Holding ID: " + holdingId +
-                ", " + asset +
-                ", Quantity: " + quantity +
-                ", Total Value: " + getTotalValue();
+        return "Holding{" +
+                "Holding ID='" + holdingId + '\'' +
+                ", Asset=" + asset +
+                ", Quantity=" + quantity +
+                ", Current Value=" + getCurrentValue() +
+                '}';
     }
 }
